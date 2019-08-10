@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+
+gem 'roda', git: 'https://github.com/jeremyevans/roda', branch: :master
+
+gemspec

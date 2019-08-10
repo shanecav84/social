@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+DATABASE_NAME = 'activity_pub'
+
+system 'bundle install'
+
+["#{DATABASE_NAME}_dev", "#{DATABASE_NAME}_test"].each do |db|
+  system "createdb #{db}"
+  system "bundle exec sequel -m lib/activity_pub/db/migrations postgres://localhost/#{db}"
+end

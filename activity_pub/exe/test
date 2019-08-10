@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+set -e
+
+printf "===== Linting Ruby code\n"
+bundle exec rubocop
+
+printf "===== Testing Ruby code\n"
+bundle exec rspec
